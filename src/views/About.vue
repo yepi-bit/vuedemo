@@ -1,8 +1,9 @@
 <template>
     <div class="home">
+        <a-button @click="clickIdTwo">点击滑动</a-button>
         <div ref="header" class="header-bg" :class="headerFixed?'issFixed':''">Header</div>
         <div style="height: 900px">111</div>
-        <div style="height: 900px">222</div>
+        <div style="height: 900px" ref="idTwo">222</div>
         <transition name="fade">
             <p id="back-top" v-if="backTopFlag" @click="scollTo(0)">
                 <rocket-outlined />
@@ -60,6 +61,9 @@
             }
         },
         methods: {
+            clickIdTwo() {
+                this.$refs.idTwo.scrollIntoView({behavior:'smooth',block:'end'})
+            },
             handleScroll() {
                 // 得到页面滚动的距离，兼容写法
                 let scrollTop =

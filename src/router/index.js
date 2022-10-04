@@ -17,6 +17,11 @@ const routes = [
     name: 'Wangeditor',
     component: () => import(/* webpackChunkName: "about" */ '../views/Wangeditor.vue')
   },
+  {
+    path: '/searchPage',
+    name: 'SearchPage',
+    component: () => import(/* webpackChunkName: "about" */ '../views/SearchPage.vue')
+  },
 ]
 
 const router = createRouter({
